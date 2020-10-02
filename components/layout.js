@@ -1,5 +1,7 @@
 import React from "react";
 import Head from "next/head";
+import TopBar from "./topBar";
+import MenuBar from "./menuBar";
 
 const Layout = ({ children, title = "This is the default title" }) => {
   return (
@@ -11,8 +13,8 @@ const Layout = ({ children, title = "This is the default title" }) => {
       </Head>
       <header>
         <nav>
-          <div>Top logo bar Component</div>
-          <div>Menu bar Component</div>
+          <TopBar />
+          <MenuBar />
         </nav>
       </header>
       <div className="d-flex">{children}</div>
