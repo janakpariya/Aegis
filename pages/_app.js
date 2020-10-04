@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import Head from "next/head";
 import "../styles/token.css";
 import "../styles/styles.css";
+import "@innovaccer/design-system/css";
 
 export default function App({ Component, pageProps }) {
   return (

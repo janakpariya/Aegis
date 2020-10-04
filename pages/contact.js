@@ -1,15 +1,15 @@
 import React from "react";
 import Layout from "../components/layout";
 
-const Home = () => {
+const Contact = () => {
   return (
-    <Layout title="Aegis | Home">
+    <Layout title="Aegis | Contact Us">
       <div>
         <p>Hello!</p>
-        <p>This is a home page</p>
+        <p>This is a Contact Us page</p>
       </div>
     </Layout>
   );
 };
 
-export default Home;
+export default Contact;

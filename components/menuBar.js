@@ -1,38 +1,83 @@
 import { Popover } from "@innovaccer/design-system";
-import React, { Component } from "react";
+import { useRouter } from "next/router";
+import React from "react";
 
-class MenuBar extends Component {
-  render() {
-    return (
-      <div
-        style={{ backgroundColor: "var(--jal-dark)", color: "var(--white)" }}
-        className="d-flex fjbetween"
-      >
-        <div className="d-flex">
-          <p className="mL--16">Home</p>
-          <p className="mL--16">About Us</p>
+const MenuBar = () => {
+  const router = useRouter();
+  return (
+    <div
+      style={{ backgroundColor: "var(--jal-dark)", color: "var(--white)" }}
+      className="d-flex fjbetween p--8"
+    >
+      <div className="d-flex">
+        <p onClick={() => router.push("/home")} className="cursor--pointer">
+          Home
+        </p>
+        <p
+          onClick={() => router.push("/about")}
+          className="cursor--pointer ml--16"
+        >
+          About Us
+        </p>
+        <div className="ml--16">
           <Popover
             on="hover"
-            trigger={<p className="mL--16">Product</p>}
+            trigger={
+              <p
+                onClick={() => router.push("/products")}
+                className="cursor--pointer"
+              >
+                Product
+              </p>
+            }
             position="bottom-start"
-            style={{
-              backgroundColor: "var(--jal-dark)",
-              color: "var(--white)",
-            }}
+            appendToBody={false}
+            hoverable
           >
-            <div>
-              <p>Insecticides</p>
-              <p>Herbicides</p>
-              <p>Fungicides</p>
-              <p>Plant Growth Regulator</p>
+            <div
+              style={{
+                backgroundColor: "var(--jal-dark)",
+                color: "var(--white)",
+              }}
+              className="p--4"
+            >
+              <p
+                className="mb--4 cursor--pointer"
+                onClick={() => router.push("/products/insecticides")}
+              >
+                Insecticides
+              </p>
+              <p
+                className="mb--4 cursor--pointer"
+                onClick={() => router.push("/products/herbicides")}
+              >
+                Herbicides
+              </p>
+              <p
+                className="mb--4 cursor--pointer"
+                onClick={() => router.push("/products/fungicides")}
+              >
+                Fungicides
+              </p>
+              <p
+                onClick={() => router.push("/products/plant-growth-regulator")}
+                className="cursor--pointer"
+              >
+                Plant Growth Regulator
+              </p>
             </div>
           </Popover>
-          <p className="mL--16">Contact Us</p>
         </div>
-        <div className="p--16">User Login</div>
+        <p
+          onClick={() => router.push("/contact")}
+          className="cursor--pointer ml--16"
+        >
+          Contact Us
+        </p>
       </div>
-    );
-  }
-}
+      <div>User Login</div>
+    </div>
+  );
+};
 
 export default MenuBar;
