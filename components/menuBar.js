@@ -4,18 +4,36 @@ import React from "react";
 
 const MenuBar = () => {
   const router = useRouter();
+  const { pathname } = useRouter();
+  const isLinkActive = (routeLink) => pathname.includes(routeLink);
   return (
     <div
-      style={{ backgroundColor: "var(--jal-dark)", color: "var(--white)" }}
+      style={{
+        backgroundColor: "var(--jal-dark)",
+        color: "var(--white)",
+      }}
       className="d-flex fjbetween p--8"
     >
       <div className="d-flex">
-        <p onClick={() => router.push("/home")} className="cursor--pointer">
+        <p
+          onClick={() => router.push("/home")}
+          className="cursor--pointer"
+          style={
+            isLinkActive("home")
+              ? { color: "var(--haldi)", fontWeight: "bolder" }
+              : {}
+          }
+        >
           Home
         </p>
         <p
           onClick={() => router.push("/about")}
           className="cursor--pointer ml--16"
+          style={
+            isLinkActive("about")
+              ? { color: "var(--haldi)", fontWeight: "bolder" }
+              : {}
+          }
         >
           About Us
         </p>
@@ -26,6 +44,11 @@ const MenuBar = () => {
               <p
                 onClick={() => router.push("/products")}
                 className="cursor--pointer"
+                style={
+                  isLinkActive("products")
+                    ? { color: "var(--haldi)", fontWeight: "bolder" }
+                    : {}
+                }
               >
                 Product
               </p>
@@ -71,6 +94,11 @@ const MenuBar = () => {
         <p
           onClick={() => router.push("/contact")}
           className="cursor--pointer ml--16"
+          style={
+            isLinkActive("contact")
+              ? { color: "var(--haldi)", fontWeight: "bolder" }
+              : {}
+          }
         >
           Contact Us
         </p>
