@@ -3,6 +3,7 @@ import Head from "next/head";
 import "../styles/token.css";
 import "../styles/styles.css";
 import "@innovaccer/design-system/css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default function App({ Component, pageProps }) {
   return (

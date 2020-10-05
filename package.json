@@ -14,6 +14,7 @@
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-responsive-carousel": "^3.2.10",
     "remark": "^12.0.0",
     "remark-html": "^12.0.0"
   }

@@ -1,24 +1,38 @@
 import { Icon } from "@innovaccer/design-system";
-import React from "react";
+import React, { Component } from "react";
+import { Carousel } from "react-responsive-carousel";
 
-const Slider = () => {
-  return (
-    <div
-      style={{
-        backgroundColor: "var(--jal-dark)",
-        width: "100%",
-        height: "500px",
-      }}
-      className="d-flex fjbetween bTop bBottom"
-    >
-      <div className="facenter" style={{ backgroundColor: "transparent" }}>
-        <Icon name="keyboard_arrow_left" size={32} />
+class Slider extends Component {
+  render() {
+    return (
+      <div
+        // style={{
+        //   width: "100%",
+        // }}
+        className="d-flex fjbetween bTop bBottom"
+      >
+        <Carousel
+          autoPlay
+          showThumbs={false}
+          stopOnHover={false}
+          infiniteLoop
+          showStatus={false}
+          interval={5000}
+          transitionTime={1000}
+        >
+          <div>
+            <img src="../images/slide1.jpg" />
+          </div>
+          <div>
+            <img src="../images/slide2.jpg" />
+          </div>
+          <div>
+            <img src="../images/slide3.jpg" />
+          </div>
+        </Carousel>
       </div>
-      <div className="facenter">
-        <Icon name="keyboard_arrow_right" size={32} />
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Slider;
