@@ -5,12 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 class Slider extends Component {
   render() {
     return (
-      <div
-        // style={{
-        //   width: "100%",
-        // }}
-        className="d-flex fjbetween bTop bBottom"
-      >
+      <div className="bTop bBottom">
         <Carousel
           autoPlay
           showThumbs={false}
