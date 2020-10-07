@@ -671,3 +671,11 @@ ul {
   border-radius: 5px;
   background-color: var(--jal);
 }
+
+.formInput {
+  width: "70%";
+}
+
+.formMessage {
+  width: 257.6px;
+}

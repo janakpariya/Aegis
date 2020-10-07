@@ -17,7 +17,7 @@ const Layout = ({ children, title = "This is the default title" }) => {
           <MenuBar />
         </nav>
       </header>
-      <div className="d-flex">{children}</div>
+      <div>{children}</div>
       <footer>Here is the FOOTER</footer>
     </div>
   );
